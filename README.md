@@ -1,32 +1,41 @@
-# react-music-player
-music player build with React
+# music-player-by-react
 
-### overview
-![](https://github.com/xiaolin3303/react-music-player/blob/master/overview/music-player.png?raw=true)
-![](https://github.com/xiaolin3303/react-music-player/blob/master/overview/music-list.png?raw=true)
+### package.json----npm 脚本<br>
+   > "build": "webpack",   //npm run build 项目构建<br>
+   > "watch": "webpack --watch",  //npm run watch 就会看到 webpack 编译代码<br>
+   > "start": "webpack-dev-server --open",  //npm start，就会看到浏览器自动加载页面。如果现在修改和保存任意源文件，web服务器就会自动重新加载编译后的代码<br>
+   > "server": "node server.js" //npm run server 打开浏览器，跳转到 http://localhost:3000，你应该看到你的webpack 应用程序已经运行<br>
 
-### 如何运行
 
-**开发启动**
-```shell
-npm start
-```
 
-**编译产品**
-```shell
-npm run build
-```
+### 清理 /dist 文件夹
+安装:npm install clean-webpack-plugin --save-dev<br>
+配置：webpack.config.js
+	  const CleanWebpackPlugin = require('clean-webpack-plugin');
+	  
+	  plugins: [
+		  new CleanWebpackPlugin(['dist']),
+	  ]
 
-**运行各阶段例子**
+### 精简输出(依赖第三方的工具执行未引用的代码的dead-code删除工作)
+安装：npm install --save-dev uglifyjs-webpack-plugin<br>
+配置：webpack.config.js
+	  const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
-修改`webpack.config.js`中`entry`
+	  plugins: [
+		  new UglifyJSPlugin()
+	  ]
 
-比如`Router`例子
-```javascript
-entry: [
-    'webpack-dev-server/client?http://localhost:3000',
-    'webpack/hot/only-dev-server',
-    'react-hot-loader/patch',
-    path.join(__dirname, 'app/router/index.js')
-],
-```
+
+# 使用说明<br>
+ ### 下载项目<br>
+ git clone https://github.com/LinkChenzy/music-player-by-react.git
+
+ ### 安装依赖<br>
+ npm install
+
+ ### 启动开发服务<br>
+ npm start
+
+ ### 编译代码<br>
+ npm run build
