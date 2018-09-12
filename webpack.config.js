@@ -1,24 +1,25 @@
+'use strict';
 
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    
+    devtool: 'eval-source-map',
     entry: [
         'webpack-dev-server/client?http://localhost:3000',
         'webpack/hot/only-dev-server',
         'react-hot-loader/patch',
-        path.join(__dirname, 'app/index.js')
+        path.join(__dirname, 'app/final/index.js')
     ],
-    output:{
-        path : path.join(__dirname,'/dist/'),
-        filename : '[name].js',
+    output: {
+        path: path.join(__dirname, '/dist/'),
+        filename: '[name].js',
         publicPath: '/'
     },
     plugins: [
         new HtmlWebpackPlugin({
-          template: './index.tpl.html',
+          template: './app/index.tpl.html',
           inject: 'body',
           filename: './index.html'
         }),
@@ -30,6 +31,9 @@ module.exports = {
         })
     ],
     module: {
+        resolve:{
+            extensions:['','.js','.json']
+        },        
         loaders: [
             {
               test: /\.js$/,
@@ -53,6 +57,5 @@ module.exports = {
                 loader: 'style-loader!css-loader!less-loader'
             }
         ]
-    },
-
-}
+    }
+};

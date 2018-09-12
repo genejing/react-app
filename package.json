@@ -1,24 +1,30 @@
 {
   "name": "react-music-player",
   "version": "1.0.0",
-  "description": "music-player build by react",
-  "main": "app/index.js",
+  "description": "music player build with react, redux and react-router with the help of webpack.",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "",
+    "start": "node server",
+    "build": "webpack --config ./webpack.production.config.js --progress --profile --colors",
+    "eslint": "eslint ."
   },
   "keywords": [
-    "webpack",
+    "es6",
     "react",
-    "music-player"
+    "redux"
   ],
-  "author": "gene",
+  "author": "musiq",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaolin3303/react-music-player"
+  },  
   "dependencies": {
     "pubsub-js": "^1.5.4",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
-    "react-hot-loader": "^3.0.0-beta.7",
+    "react-hot-loader": "^3.0.0-beta.2",
     "react-router": "^2.0.0"
   },
   "devDependencies": {
@@ -37,13 +43,5 @@
     "style-loader": "^0.13.1",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/genejing/react-app.git"
-  },
-  "bugs": {
-    "url": "https://github.com/genejing/react-app/issues"
-  },
-  "homepage": "https://github.com/genejing/react-app#readme"
+  }
 }
