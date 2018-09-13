@@ -7,6 +7,6 @@ app.set('view engine', 'ejs');
 app.use(express.static('./public'));
 todoController(app);
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
 
 console.log("listen 3000");
