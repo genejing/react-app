@@ -1,7 +1,6 @@
 {
-  "name": "node-express-mongodb",
+  "name": "react-app",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,5 +13,16 @@
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "mongoose": "^5.2.14"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/genejing/react-app.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/genejing/react-app/issues"
+  },
+  "homepage": "https://github.com/genejing/react-app#readme",
+  "description": ""
 }
